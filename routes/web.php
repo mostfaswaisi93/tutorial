@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UploadController;
@@ -69,3 +70,6 @@ Route::post('/upload', [UploadController::class, 'uploadFile'])->name('upload.up
 Route::get('/payment', function () {
     return Payment::process();
 });
+
+// Send Email using Gmail
+Route::get('/send-email', [MailController::class, 'sendEmail']);
