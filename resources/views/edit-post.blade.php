@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DB CRUD Operation</title>
+    <title>Edit Post</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
@@ -18,25 +18,28 @@
                 <div class="col-md-6 offset-md-3">
                     <div class="card">
                         <div class="card-header">
-                            Add New Post
+                            Edit Post
                         </div>
                         <div class="card-body">
-                            @if (Session::has('post_created'))
+                            @if (Session::has('post_updated'))
                             <div class="alert alert-success" role="alert">
-                                {{Session::get('post_created')}}
+                                {{Session::get('post_updated')}}
                             </div>
                             @endif
-                            <form method="POST" action="{{ route('post.addsubmit') }}">
+                            <form method="POST" action="{{ route('post.updatesubmit') }}">
                                 @csrf
+                                <input type="hidden" name="id" value="{{$post->id}}">
                                 <div class="form-group">
                                     <label for="title">Post Title</label>
-                                    <input type="text" class="form-control" id="title" name="title">
+                                    <input type="text" class="form-control" id="title" name="title"
+                                        value="{{$post->title}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="body">Post Description</label>
-                                    <textarea name="body" id="body" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="body" id="body" cols="30" rows="10"
+                                        class="form-control">{{$post->body}}</textarea>
                                 </div>
-                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="submit" class="btn btn-success">Update</button>
                             </form>
                         </div>
                     </div>

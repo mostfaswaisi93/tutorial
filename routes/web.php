@@ -38,3 +38,12 @@ Route::get('/session/remove', [SessionController::class, 'deleteSessionData'])->
 Route::get('/posts', [PostController::class, 'getAllPost'])->name('post.getallpost');
 Route::get('/add-post', [PostController::class, 'addPost'])->name('post.addpost');
 Route::post('/add-post', [PostController::class, 'addPostSubmit'])->name('post.addsubmit');
+Route::get('/posts/{id}', [PostController::class, 'getPostById'])->name('post.getbyid');
+Route::get('/edit-post/{id}', [PostController::class, 'editPost'])->name('post.edit');
+Route::post('/update-post', [PostController::class, 'updatePost'])->name('post.updatesubmit');
+Route::get('/delete-post/{id}', [PostController::class, 'deletePost'])->name('post.delete');
+
+// Join Clauses
+Route::get('/inner-join', [PostController::class, 'innerJoinClause'])->name('post.innerjoin');
+Route::get('/left-join', [PostController::class, 'leftJoinClause'])->name('post.leftjoin');
+Route::get('/right-join', [PostController::class, 'rightJoinClause'])->name('post.rightjoin');
