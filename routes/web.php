@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,3 +48,18 @@ Route::get('/delete-post/{id}', [PostController::class, 'deletePost'])->name('po
 Route::get('/inner-join', [PostController::class, 'innerJoinClause'])->name('post.innerjoin');
 Route::get('/left-join', [PostController::class, 'leftJoinClause'])->name('post.leftjoin');
 Route::get('/right-join', [PostController::class, 'rightJoinClause'])->name('post.rightjoin');
+
+// Blade Template Layout
+Route::get('/home', function () {
+    return view('index');
+});
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+// File Upload
+Route::get('/upload', [UploadController::class, 'uploadForm']);
+Route::post('/upload', [UploadController::class, 'uploadFile'])->name('upload.uploadfile');
