@@ -9,4 +9,6 @@
 9. Send Email using Gmail
 10. Authentication - Jetstream and Fortify
 11. Eloquent CRUD Operation
-12. 
+12. Eloquent Relationship One to One
+13. Eloquent Relationship One to Many
+14. 

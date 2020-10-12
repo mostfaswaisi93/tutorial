@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,3 +19,7 @@ Route::get('/posts/{id}', [PostController::class, 'getPostById'])->name('post.ge
 Route::get('/delete-post/{id}', [PostController::class, 'deletePost'])->name('post.delete');
 Route::get('/edit-post/{id}', [PostController::class, 'editPost'])->name('post.edit');
 Route::post('/update-post', [PostController::class, 'updatePost'])->name('post.update');
+
+// Eloquent Relationship - One to one
+Route::get('/add-user', [UserController::class, 'insertRecord']);
+Route::get('/get-phone/{id}', [UserController::class, 'fetchPhoneByUser']); 
