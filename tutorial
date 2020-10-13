@@ -7,12 +7,13 @@
 7. Blade Template Layout and File Upload
 8. Facades and Custom 404 Page
 9. Send Email using Gmail
-10. Authentication - Jetstream and Fortify
+10. Authentication - jetstream
 11. Eloquent CRUD Operation
 12. Eloquent Relationship One to One
 13. Eloquent Relationship One to Many
 14. Eloquent Relationship Many to Many
-15. Export Data in Excel and CSV
-16. Export Data in PDF
-17. Import Data From Excel and CSV
-18. 
+15. Export Data in Excel and CSV - maatwebsite/excel
+16. Export Data in PDF - barryvdh/laravel-dompdf
+17. Import Data From Excel and CSV - maatwebsite/excel
+18. Resize Image - intervention/image
+19. 
