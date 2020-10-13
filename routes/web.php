@@ -5,6 +5,7 @@ use App\Http\Controllers\EditorController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\ZipController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,3 +34,6 @@ Route::get('/get-name', [TestController::class, 'getFirstLastName']);
 Route::get('/add-product', [ProductController::class, 'addProduct']);
 Route::get('/search', [ProductController::class, 'search']);
 Route::get('/autocomplete', [ProductController::class, 'autocomplete'])->name('autocomplete');
+
+// Create Zip File and Download
+Route::get('/zip', [ZipController::class, 'zipFile']);
