@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EditorController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,8 @@ Route::post('/send-message', [ContactController::class, 'sendEmail'])->name('con
 
 // Helpers
 Route::get('/get-name', [TestController::class, 'getFirstLastName']);
+
+// Autocomplete Search
+Route::get('/add-product', [ProductController::class, 'addProduct']);
+Route::get('/search', [ProductController::class, 'search']);
+Route::get('/autocomplete', [ProductController::class, 'autocomplete'])->name('autocomplete');
