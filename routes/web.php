@@ -34,3 +34,7 @@ Route::get('/export-csv', [EmployeeController::class, 'exportIntoCSV']);
 // Export Data in PDF
 Route::get('/get-all-employees', [EmpController::class, 'getAllEmployees']);
 Route::get('/download-pdf', [EmpController::class, 'downloadPDF']);
+
+// Import Data From Excel and CSV
+Route::get('/import-form', [EmployeeController::class, 'importForm']);
+Route::post('/import', [EmployeeController::class, 'import'])->name('employee.import');
