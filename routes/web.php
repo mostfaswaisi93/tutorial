@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EditorController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TestController;
@@ -37,3 +38,6 @@ Route::get('/autocomplete', [ProductController::class, 'autocomplete'])->name('a
 
 // Create Zip File and Download
 Route::get('/zip', [ZipController::class, 'zipFile']);
+
+// Yajra DataTables
+Route::get('/employee', [EmployeeController::class, 'index']);
