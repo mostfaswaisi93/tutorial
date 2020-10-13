@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmpController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RoleController;
@@ -29,3 +30,7 @@ Route::get('/get-users/{id}', [RoleController::class, 'getUsersByRole']);
 Route::get('/add-employees', [EmployeeController::class, 'addEmployee']);
 Route::get('/export-excel', [EmployeeController::class, 'exportIntoExcel']);
 Route::get('/export-csv', [EmployeeController::class, 'exportIntoCSV']);
+
+// Export Data in PDF
+Route::get('/get-all-employees', [EmpController::class, 'getAllEmployees']);
+Route::get('/download-pdf', [EmpController::class, 'downloadPDF']);
