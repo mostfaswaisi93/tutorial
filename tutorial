@@ -36,4 +36,5 @@
 36. Bar Charts
 37. Multiple Database Connection
 38. Multi Step Form
-39. 
+39. Maintenance Mode -- php artisan down --secret="password"
+40. 
