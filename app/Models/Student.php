@@ -11,10 +11,18 @@ class Student extends Model
 
     protected $table = 'students';
 
-    protected $fillable = [
-        'firstname',
-        'lastname',
-        'email',
-        'phone'
-    ];
+    public function setEmailAttribute($value)
+    {
+        $this->attributes['email'] = strtolower($value);
+    }
+
+    public function getNameAttribute($value)
+    {
+        return strtoupper($value);
+    }
+
+    public function getEmailAttribute($value)
+    {
+        return strtoupper($value);
+    }
 }
