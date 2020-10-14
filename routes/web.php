@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -36,3 +37,9 @@ Route::get('/chart', [ChartController::class, 'index']);
 
 // Bar Charts
 Route::get('/bar-chart', [ChartController::class, 'barChart']);
+
+// Multiple Database Connection
+Route::get('/add-student', [TestController::class, 'addStudent']);
+Route::get('/add-post', [TestController::class, 'addPost']);
+Route::get('/students', [TestController::class, 'getStudents']);
+Route::get('/posts', [TestController::class, 'getPosts']);

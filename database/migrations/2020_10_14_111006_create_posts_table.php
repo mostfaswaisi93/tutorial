@@ -13,12 +13,12 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('body');
-            $table->timestamps();
-        });
+        Schema::connection('mysql2')->create('posts', function (Blueprint $table) {
+                $table->id();
+                $table->string('title');
+                $table->text('body');
+                $table->timestamps();
+            });
     }
 
     /**
