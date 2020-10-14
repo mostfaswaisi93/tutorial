@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,6 @@ Route::delete('/selected-students', [StudentController::class, 'deleteCheckedStu
 // Client Side Form Validation
 Route::get('/register', [AuthController::class, 'index']);
 Route::post('/register', [AuthController::class, 'registerSubmit'])->name('auth.registersubmit');
+
+// Infinite Scroll Pagination
+Route::get('/posts', [PostController::class, 'index']);
