@@ -17,3 +17,6 @@ Route::put('/student', [StudentController::class, 'updateStudent'])->name('stude
 
 // Delete Record Using Ajax
 Route::delete('/students/{id}', [StudentController::class, 'deleteStudent']);
+
+// Delete Multiple Record Using Checkbox
+Route::delete('/selected-students', [StudentController::class, 'deleteCheckedStudents'])->name('student.deleteSelected');
