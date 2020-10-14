@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TestController;
@@ -43,3 +44,7 @@ Route::get('/add-student', [TestController::class, 'addStudent']);
 Route::get('/add-post', [TestController::class, 'addPost']);
 Route::get('/students', [TestController::class, 'getStudents']);
 Route::get('/posts', [TestController::class, 'getPosts']);
+
+// Multi Step Form
+Route::get('/form', [FormController::class, 'index']);
+Route::post('/form', [FormController::class, 'formSubmit'])->name('form.formsubmit');
