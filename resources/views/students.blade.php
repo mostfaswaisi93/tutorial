@@ -42,6 +42,8 @@
                                         <td>
                                             <a href="javascript:void(0)" onclick="editStudent({{$student->id}})"
                                                 class="btn btn-info"> Edit</a>
+                                            <a href="javascript:void(0)" onclick="deleteStudent({{$student->id}})"
+                                                class="btn btn-danger"> Delete</a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -139,6 +141,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
+
     <script>
         $("#studentForm").submit(function(e){
             e.preventDefault();
@@ -213,6 +216,27 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        function deleteStudent(id)
+        {
+            let _token = $("input[name=_token]").val();
+
+            if(confirm("Do you realy want to delete this Record?"))
+            {
+                $.ajax({
+                    url: '/students/'+id,
+                    type: "DELETE",
+                    data: {
+                        _token: _token
+                    },
+                    success: function(response){
+                        $("#sid"+id).remove();
+                    }
+                });
+            }
+        }
     </script>
 </body>
 

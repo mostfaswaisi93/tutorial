@@ -14,3 +14,6 @@ Route::post('/add-student', [StudentController::class, 'addStudent'])->name('stu
 // Update Record Using Ajax
 Route::get('/students/{id}', [StudentController::class, 'getStudentById']);
 Route::put('/student', [StudentController::class, 'updateStudent'])->name('student.update');
+
+// Delete Record Using Ajax
+Route::delete('/students/{id}', [StudentController::class, 'deleteStudent']);
