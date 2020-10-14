@@ -38,4 +38,5 @@
 38. Multi Step Form
 39. Maintenance Mode -- php artisan down --secret="password"
 40. Accessors And Mutators
-41. 
+41. Custom Artisan Command
+42. 
