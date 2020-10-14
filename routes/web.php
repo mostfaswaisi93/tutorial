@@ -10,3 +10,7 @@ Route::get('/', function () {
 // Insert Record Using Ajax
 Route::get('/students', [StudentController::class, 'index']);
 Route::post('/add-student', [StudentController::class, 'addStudent'])->name('student.add');
+
+// Update Record Using Ajax
+Route::get('/students/{id}', [StudentController::class, 'getStudentById']);
+Route::put('/student', [StudentController::class, 'updateStudent'])->name('student.update');
