@@ -33,3 +33,6 @@ Route::get('/posts', [PostController::class, 'index']);
 
 // HighCharts
 Route::get('/chart', [ChartController::class, 'index']);
+
+// Bar Charts
+Route::get('/bar-chart', [ChartController::class, 'barChart']);
