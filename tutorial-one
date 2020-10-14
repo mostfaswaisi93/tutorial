@@ -26,17 +26,13 @@
 26. Create Zip File and Download
 27. Yajra DataTables
 28. Yajra DataTables Excel and CSV Export Buttons
-29. Insert Record Using Ajax
-30. Update Record Using Ajax
-31. Delete Record Using Ajax
-32. Delete Multiple Record Using Checkbox
-33. Client Side Form Validation
-34. Infinite Scroll Pagination
-35. HighCharts
-36. Bar Charts
-37. Multiple Database Connection
-38. Multi Step Form
-39. Maintenance Mode -- php artisan down --secret="password"
-40. Accessors And Mutators
-41. Custom Artisan Command
-42. 
+29. Insert, Update and Delete Record Using Ajax (CRUD)
+30. Delete Multiple Record Using Checkbox
+31. Client Side Form Validation
+32. Infinite Scroll Pagination
+33. HighCharts and Bar Charts
+34. Multiple Database Connection
+35. Multi Step Form
+36. Maintenance Mode -- php artisan down --secret="password"
+37. Accessors And Mutators
+38. Custom Artisan Command
