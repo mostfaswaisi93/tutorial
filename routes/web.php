@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
@@ -29,3 +30,6 @@ Route::post('/register', [AuthController::class, 'registerSubmit'])->name('auth.
 
 // Infinite Scroll Pagination
 Route::get('/posts', [PostController::class, 'index']);
+
+// HighCharts
+Route::get('/chart', [ChartController::class, 'index']);
