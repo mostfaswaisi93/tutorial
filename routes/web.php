@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,7 @@ Route::delete('/students/{id}', [StudentController::class, 'deleteStudent']);
 
 // Delete Multiple Record Using Checkbox
 Route::delete('/selected-students', [StudentController::class, 'deleteCheckedStudents'])->name('student.deleteSelected');
+
+// Client Side Form Validation
+Route::get('/register', [AuthController::class, 'index']);
+Route::post('/register', [AuthController::class, 'registerSubmit'])->name('auth.registersubmit');
