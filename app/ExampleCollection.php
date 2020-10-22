@@ -7,11 +7,9 @@ class ExampleCollection
     public function example()
     {
         $data = [
-            [0 => ['array1']],
-            [1 => ['array2']],
-            [3, 4, 5]
+            1, 2, 3, 4, 5, 6, 7
         ];
 
-        return collect($data)->collapse(); // collapse
+        return collect($data)->chunk(3); // chunk
     }
 }
