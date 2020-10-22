@@ -6,24 +6,13 @@ class ExampleCollection
 {
     public function example()
     {
-        $data = [
-            1,
-            2 => [5, 6],
-            3,
-            4,
-            'seven'
-        ];
+        $collections = collect([1, 2, 3]);
 
-        return collect($data)->count(); // count
+        return $collections->diff([2, 4, 6]); // diff 
 
-        // $collections = collect([1, 2]);
-        $collections = collect(['Mustang', 'GT', 'F150']);
-        // return $collections->crossJoin(['a', 'b'], ['c', 'd']);
-        return $collections->crossJoin([
-            ['automatic', 'manual'],
-            ['blue', 'black', 'white', 'yellow', 'gray'],
-            [2018, 2019, 2020]
-        ]); // crossJoin
+        $collections = collect([10 => 'apple', 20 => 'banana']);
 
+        return $collections->diffAssoc([30 => 'pears', 20 => 'banana']); // diffAssoc 
+        return $collections->diffKeys([30 => 'pears', 20 => 'bananas'])->first(); // diffKeys 
     }
 }
