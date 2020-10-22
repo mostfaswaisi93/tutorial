@@ -6,13 +6,13 @@ class ExampleCollection
 {
     public function example()
     {
-        $collections = collect([1, 2, 3]);
+        $collections = collect(['A-43', 'B54', 'B-23', 'A12']);
 
-        return $collections->diff([2, 4, 6]); // diff 
+        $newCollection = $collections->sort(function ($a, $b) {
+            $code = str_replace('-', '', $a);
+            return ($code < $b) ? -1 : 1;
+        }); // sort
 
-        $collections = collect([10 => 'apple', 20 => 'banana']);
-
-        return $collections->diffAssoc([30 => 'pears', 20 => 'banana']); // diffAssoc 
-        return $collections->diffKeys([30 => 'pears', 20 => 'bananas'])->first(); // diffKeys 
+        return $newCollection;
     }
 }
