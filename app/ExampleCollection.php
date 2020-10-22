@@ -6,10 +6,15 @@ class ExampleCollection
 {
     public function example()
     {
-        $data = [
-            1, 2, 3, 4, 5, 6, 7
-        ];
+        $keys = collect(['column1', 'column1']);
 
-        return collect($data)->chunk(3); // chunk
+        return $keys->combine([ // combine
+            ['value1' => 123, 'value3' => 789],
+            ['value2' => 456]
+        ]);
+
+        $data = collect(['key2' => 'value1']);
+
+        return $data->concat(['key1' => 'value2']); // concat
     }
 }
