@@ -4,7 +4,7 @@
     <section>
         <style>
             nav svg {
-                max-height: 20px;
+                height: 20px;
             }
         </style>
         <div class="container">
