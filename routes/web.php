@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Images;
 use App\Http\Livewire\Students;
 use App\Http\Livewire\Uploads;
 use App\Http\Livewire\User;
@@ -21,3 +22,6 @@ Route::get('/students', Students::class);
 
 // Livewire File Upload 
 Route::get('/uploads', Uploads::class);
+
+// Livewire Multiple Image Upload
+Route::get('/upload-images', Images::class);

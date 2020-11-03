@@ -25,6 +25,7 @@ class Uploads extends Component
         session()->flash('message', 'File successfully Uploaded!');
         $this->emit('fileUploaded');
     }
+
     public function render()
     {
         return view('livewire.uploads');
